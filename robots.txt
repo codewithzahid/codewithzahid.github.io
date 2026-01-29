@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+# Sitemaps
+Sitemap: https://codewithzahid.github.io/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Specific crawl rules
+User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+
+User-agent: Bingbot
+Crawl-delay: 1
+Allow: /

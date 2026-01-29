@@ -4,7 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <meta name="description"
+        content="Zahid Hasan - Expert Embedded Systems Developer with 2+ years experience in firmware development, IoT, and microcontroller programming. Specialized in ESP32, ARM, AVR, and RTOS.">
+    <meta name="keywords"
+        content="embedded systems, firmware developer, embedded C, IoT, microcontroller, ESP32, ARM, AVR, FreeRTOS, embedded engineer">
+    <meta name="author" content="Zahid Hasan">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Zahid Hasan - Embedded Systems Developer | Portfolio">
+    <meta property="og:description"
+        content="Expert in firmware development, IoT solutions, and embedded systems. 2+ years experience with ESP32, ARM, and RTOS.">
+    <meta property="og:image" content="https://codewithzahid.github.io/photos/zahid.jpg">
+    <meta property="og:url" content="https://codewithzahid.github.io">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zahid Hasan - Embedded Systems Developer">
+    <meta name="twitter:description"
+        content="Expert firmware developer specializing in IoT and microcontroller systems.">
+    <meta name="twitter:image" content="https://codewithzahid.github.io/photos/zahid.jpg">
+    <link rel="canonical" href="https://codewithzahid.github.io">
+    <link rel="sitemap" type="application/xml" href="https://codewithzahid.github.io/sitemap.xml">
+    <link rel="apple-touch-icon" href="https://codewithzahid.github.io/photos/zahid.jpg">
+    <title>Zahid Hasan - Embedded Systems Developer | Firmware & IoT Expert</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,6 +32,7 @@
                 extend: {
                     fontFamily: {
                         poppins: ['Poppins', 'sans-serif'],
+                        orbitron: ['Orbitron', 'sans-serif'],
                     },
                     colors: {
                         'deep-purple': '#14102a',
@@ -19,143 +40,538 @@
                         'light-purple': '#583d9c',
                         'accent': '#8a5cf5'
                     },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'fade-in': 'fadeIn 1s ease-out',
+                        'scale-in': 'scaleIn 0.6s ease-out',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(138, 92, 245, 0.5)' },
+                            '50%': { boxShadow: '0 0 40px rgba(138, 92, 245, 0.8)' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(50px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.8)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                    }
                 }
             }
         }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@500;700;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #8a5cf5 0%, #c77dff 50%, #8a5cf5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: gradient-shift 3s linear infinite;
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(138, 92, 245, 0.3);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .parallax-bg {
+            transition: transform 0.1s ease-out;
+        }
+
+        .typing-animation::after {
+            content: '|';
+            animation: blink 1s step-start infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .skill-icon {
+            transition: all 0.3s ease;
+        }
+
+        .skill-icon:hover {
+            transform: rotate(360deg) scale(1.2);
+        }
+
+        .wave-line {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .wave-line::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #8a5cf5, transparent);
+            animation: wave 3s linear infinite;
+        }
+
+        @keyframes wave {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+    </style>
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Zahid Hasan",
+        "jobTitle": "Embedded Systems Developer",
+        "url": "https://codewithzahid.github.io",
+        "image": "https://codewithzahid.github.io/photos/zahid.jpg",
+        "description": "Expert Embedded Systems Developer specializing in firmware development, IoT solutions, and microcontroller programming.",
+        "sameAs": [
+            "https://github.com",
+            "https://linkedin.com",
+            "https://twitter.com"
+        ],
+        "knowsAbout": [
+            "Embedded C/C++",
+            "Firmware Development",
+            "IoT Systems",
+            "RTOS",
+            "Microcontrollers",
+            "ESP32",
+            "ARM Architecture",
+            "AVR Microcontrollers",
+            "FreeRTOS",
+            "Digital Electronics"
+        ],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Freelance"
+        }
+    }
+    </script>
+    <!-- Organization Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Zahid Hasan - Embedded Systems Developer",
+        "image": "https://codewithzahid.github.io/photos/zahid.jpg",
+        "description": "Professional embedded systems developer offering firmware development and IoT solutions.",
+        "url": "https://codewithzahid.github.io",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Dhaka",
+            "addressCountry": "BD"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+1-123-456-7890",
+            "contactType": "Customer Service"
+        }
+    }
+    </script>
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://codewithzahid.github.io"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "About",
+                "item": "https://codewithzahid.github.io#about"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Projects",
+                "item": "https://codewithzahid.github.io#projects"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Contact",
+                "item": "https://codewithzahid.github.io#contact"
+            }
+        ]
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What does Zahid Hasan specialize in?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Zahid Hasan specializes in embedded systems development, firmware programming, IoT solutions, and microcontroller programming with expertise in ESP32, ARM, AVR, and RTOS."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What programming languages does Zahid use?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Zahid is proficient in Embedded C, C++, and has experience with various microcontroller platforms including ARM Cortex-M, AVR, and ESP32 architectures."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is Zahid's experience level?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Zahid has 2+ years of professional experience in embedded systems development with 15+ completed projects in IoT, firmware, and hardware integration."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 
-<body class="bg-deep-purple text-white font-poppins">
+<body class="bg-deep-purple text-white font-poppins overflow-x-hidden">
 
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-deep-purple/90 backdrop-blur-sm z-50 shadow-md">
+    <nav class="fixed top-0 left-0 right-0 bg-deep-purple/95 backdrop-blur-md z-50 shadow-lg border-b border-accent/20">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="logo text-3xl font-bold">
-                <span class="text-accent">Zahid</span>
+            <!-- Stylish Logo -->
+            <div class="logo text-3xl md:text-4xl font-orbitron font-black tracking-wider">
+                <span class="text-white relative">
+                    <span class="relative z-10">&lt;ZAHID/&gt;</span>
+                </span>
             </div>
 
-            <!-- Hamburger Icon (Hidden on Larger Screens) -->
-            <button id="menu-toggle" class="md:hidden text-accent text-3xl focus:outline-none">
+            <!-- Hamburger Icon -->
+            <button id="menu-toggle"
+                class="md:hidden text-accent text-3xl focus:outline-none hover:scale-110 transition-transform">
                 <i class="fas fa-bars"></i>
             </button>
 
             <!-- Navigation Links -->
             <div id="menu"
                 class="hidden md:flex md:space-x-8 absolute md:relative top-full left-0 w-full md:w-auto bg-deep-purple md:bg-transparent text-center md:text-left md:flex-row flex-col md:items-center shadow-md md:shadow-none">
-                <a href="#home" class="hover:text-accent transition-colors block md:inline py-2">Home</a>
-                <a href="#about" class="hover:text-accent transition-colors block md:inline py-2">About</a>
-                <a href="#projects" class="hover:text-accent transition-colors block md:inline py-2">Projects</a>
-                <a href="#lab" class="hover:text-accent transition-colors block md:inline py-2">Lab</a>
-                <a href="#contact" class="hover:text-accent transition-colors block md:inline py-2">Contact</a>
+                <a href="#home"
+                    class="hover:text-accent transition-all hover:scale-110 block md:inline py-3 md:py-0 font-semibold relative group">
+                    Home
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#about"
+                    class="hover:text-accent transition-all hover:scale-110 block md:inline py-3 md:py-0 font-semibold relative group">
+                    About
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#projects"
+                    class="hover:text-accent transition-all hover:scale-110 block md:inline py-3 md:py-0 font-semibold relative group">
+                    Projects
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="#lab"
+                    class="hover:text-accent transition-all hover:scale-110 block md:inline py-3 md:py-0 font-semibold relative group">
+                    Lab
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <div class="relative group py-3 md:py-0">
+                    <button
+                        class="hover:text-accent transition-all hover:scale-110 font-semibold relative flex items-center">
+                        More
+                        <i class="fas fa-chevron-down text-xs ml-2 group-hover:rotate-180 transition-transform"></i>
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                    </button>
+                    <div
+                        class="absolute left-0 mt-0 w-48 bg-mid-purple rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 py-2 z-50 md:top-full">
+                        <a href="#education"
+                            class="block px-4 py-2 hover:text-accent hover:bg-deep-purple/50 transition-all text-sm"><i
+                                class="fas fa-graduation-cap mr-2"></i>Education</a>
+                        <a href="#certifications"
+                            class="block px-4 py-2 hover:text-accent hover:bg-deep-purple/50 transition-all text-sm"><i
+                                class="fas fa-certificate mr-2"></i>Certifications</a>
+                        <a href="#awards"
+                            class="block px-4 py-2 hover:text-accent hover:bg-deep-purple/50 transition-all text-sm"><i
+                                class="fas fa-trophy mr-2"></i>Honors & Awards</a>
+                        <a href="#activities"
+                            class="block px-4 py-2 hover:text-accent hover:bg-deep-purple/50 transition-all text-sm"><i
+                                class="fas fa-users mr-2"></i>Activities</a>
+                        <a href="#reviews"
+                            class="block px-4 py-2 hover:text-accent hover:bg-deep-purple/50 transition-all text-sm"><i
+                                class="fas fa-star mr-2"></i>Reviews</a>
+                        <a href="#gallery"
+                            class="block px-4 py-2 hover:text-accent hover:bg-deep-purple/50 transition-all text-sm"><i
+                                class="fas fa-images mr-2"></i>Gallery</a>
+                    </div>
+                </div>
+                <a href="#contact"
+                    class="hover:text-accent transition-all hover:scale-110 block md:inline py-3 md:py-0 font-semibold relative group">
+                    Contact
+                    <span
+                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
+                </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Interactive Elements -->
     <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-16">
+        <!-- Animated Background -->
         <div class="absolute w-full h-full">
-            <div class="absolute top-1/4 left-1/3 w-64 h-64 rounded-full bg-light-purple/30 blur-3xl"></div>
-            <div class="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-accent/20 blur-3xl"></div>
+            <div class="absolute top-1/4 left-1/3 w-64 h-64 rounded-full bg-light-purple/30 blur-3xl animate-float">
+            </div>
+            <div class="absolute bottom-1/4 right-1/3 w-80 h-80 rounded-full bg-accent/20 blur-3xl animate-float"
+                style="animation-delay: 1s;"></div>
+            <div class="absolute top-1/2 left-1/4 w-40 h-40 rounded-full bg-accent/10 blur-2xl animate-float"
+                style="animation-delay: 2s;"></div>
         </div>
 
+        <!-- Particles Effect -->
+        <div class="absolute inset-0" id="particles"></div>
+
         <div class="container mx-auto px-6 z-10 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-5xl md:text-6xl font-bold mb-4">Hello! I am <span class="text-accent">Zahid Hasan</span>
+            <div class="md:w-1/2 mb-10 md:mb-0 animate-slide-up">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm animate-fade-in">Welcome to
+                    my portfolio</div>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 animate-fade-in" style="animation-delay: 0.2s;">
+                    Hello! I am <br>
+                    <span class="gradient-text font-orbitron">Zahid Hasan</span>
                 </h1>
-                <h2 class="text-3xl md:text-4xl font-semibold mb-6">
-                    Embedded Systems Developer
+                <h2 class="text-3xl md:text-4xl font-semibold mb-6 animate-fade-in" style="animation-delay: 0.4s;">
+                    <span class="text-accent">&lt;</span>Embedded Systems Developer<span
+                        class="text-accent">/&gt;</span>
                 </h2>
-                <p class="text-lg mb-8 max-w-lg">
+                <p class="text-lg mb-8 max-w-lg leading-relaxed animate-fade-in" style="animation-delay: 0.6s;">
                     I design and develop intelligent embedded systems that bridge hardware and software,
                     creating innovative solutions for complex technical challenges.
                 </p>
-                <div class="flex space-x-4">
+                <div class="flex flex-wrap gap-4 animate-fade-in" style="animation-delay: 0.8s;">
                     <a href="#contact"
-                        class="bg-accent hover:bg-accent/80 text-white px-6 py-3 rounded-md transition-colors">
-                        Get in Touch
+                        class="bg-accent hover:bg-accent/80 text-white px-8 py-4 rounded-lg transition-all hover:scale-105 hover:shadow-lg hover:shadow-accent/50 font-semibold">
+                        <i class="fas fa-envelope mr-2"></i>Get in Touch
                     </a>
                     <a href="#projects"
-                        class="border border-accent text-accent hover:bg-accent hover:text-white px-6 py-3 rounded-md transition-colors">
-                        View Projects
+                        class="border-2 border-accent text-accent hover:bg-accent hover:text-white px-8 py-4 rounded-lg transition-all hover:scale-105 font-semibold">
+                        <i class="fas fa-code mr-2"></i>View Projects
                     </a>
                 </div>
-            </div>
-            <div class="md:w-1/2 relative">
-                <div class="relative w-64 h-64 mx-auto">
-                    <div class="absolute inset-0 rounded-full bg-accent/20 animate-pulse"></div>
-                    <img src="/photos/zahid.jpg" alt="Profile" class="relative z-10 rounded-full p-2">
+
+                <!-- Stats -->
+                <div class="grid grid-cols-3 gap-6 mt-12 animate-fade-in" style="animation-delay: 1s;">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent">2+</div>
+                        <div class="text-sm text-gray-400">Years Experience</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent">15+</div>
+                        <div class="text-sm text-gray-400">Projects Done</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-accent">10+</div>
+                        <div class="text-sm text-gray-400">Technologies</div>
+                    </div>
                 </div>
             </div>
+
+            <div class="md:w-1/2 relative animate-scale-in" style="animation-delay: 0.5s;">
+                <div class="relative w-80 h-80 mx-auto">
+                    <!-- Rotating Border -->
+                    <div class="absolute inset-0 rounded-full bg-gradient-to-r from-accent via-light-purple to-accent animate-spin"
+                        style="animation-duration: 8s;"></div>
+                    <div class="absolute inset-2 rounded-full bg-deep-purple"></div>
+
+                    <!-- Pulsing Glow -->
+                    <div class="absolute inset-0 rounded-full bg-accent/20 animate-glow"></div>
+
+                    <!-- Profile Image -->
+                    <img src="/photos/zahid.jpg" alt="Zahid Hasan - Embedded Systems Developer"
+                        class="absolute inset-3 rounded-full object-cover z-10 w-[calc(100%-24px)] h-[calc(100%-24px)] hover:scale-105 transition-transform duration-300">
+
+                    <!-- Floating Icons -->
+                    <div
+                        class="absolute -top-4 -right-4 bg-accent/90 w-16 h-16 rounded-full flex items-center justify-center animate-float shadow-lg">
+                        <i class="fas fa-microchip text-2xl"></i>
+                    </div>
+                    <div class="absolute -bottom-4 -left-4 bg-light-purple/90 w-16 h-16 rounded-full flex items-center justify-center animate-float shadow-lg"
+                        style="animation-delay: 1s;">
+                        <i class="fas fa-code text-2xl"></i>
+                    </div>
+                    <div class="absolute top-1/2 -right-8 bg-mid-purple/90 w-14 h-14 rounded-full flex items-center justify-center animate-float shadow-lg"
+                        style="animation-delay: 1.5s;">
+                        <i class="fas fa-wifi text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#about" class="flex flex-col items-center text-accent hover:text-white transition-colors">
+                <span class="text-sm mb-2">Scroll Down</span>
+                <i class="fas fa-chevron-down text-xl"></i>
+            </a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-mid-purple/50">
+    <section id="about" class="py-20 bg-mid-purple/50 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent">
+            </div>
+        </div>
+
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 text-center">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h3 class="text-2xl font-semibold mb-4">I'm an Embedded Systems Developer</h3>
-                    <p class="mb-4">
-                        With 2 years of experience in embedded systems development, I specialize in creating
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">Who I Am</div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    About Me</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-4"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 reveal">
+                    <h3 class="text-3xl font-semibold mb-6 text-accent">I'm an Embedded Systems Developer</h3>
+                    <p class="mb-4 text-lg leading-relaxed">
+                        With <strong class="text-accent">2 years of experience</strong> in embedded systems development,
+                        I specialize in creating
                         efficient and reliable firmware & hardware for microcontrollers and IoT devices.
                     </p>
-                    <p class="mb-6">
+                    <p class="mb-6 text-lg leading-relaxed">
                         I bridge the gap between hardware and software, designing systems that optimize performance
                         while meeting strict power and resource constraints.
                     </p>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <h4 class="text-accent font-semibold mb-2">Skills</h4>
-                            <ul class="space-y-1">
-                                <li>Embedded C/C++</li>
-                                <li>Firmware Development</li>
-                                <li>Analog/Digital Electronics</li>
-                                <li>PCB Design</li>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                        <div
+                            class="bg-deep-purple/50 p-6 rounded-lg border border-accent/20 hover:border-accent transition-all card-hover">
+                            <h4 class="text-accent font-semibold mb-4 text-xl flex items-center">
+                                <i class="fas fa-code mr-2"></i> Skills
+                            </h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Embedded
+                                    C/C++</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Firmware
+                                    Development</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>
+                                    Analog/Digital Electronics</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> PCB Design
+                                </li>
                             </ul>
                         </div>
-                        <div>
-                            <h4 class="text-accent font-semibold mb-2">Tools</h4>
-                            <ul class="space-y-1">
-                                <li>ARM/AVR Microcontrollers</li>
-                                <li>FreeRTOS</li>
-                                <li>JTAG/SWD Debugging</li>
-                                <li>Oscilloscopes & Logic Analyzers</li>
+                        <div
+                            class="bg-deep-purple/50 p-6 rounded-lg border border-accent/20 hover:border-accent transition-all card-hover">
+                            <h4 class="text-accent font-semibold mb-4 text-xl flex items-center">
+                                <i class="fas fa-tools mr-2"></i> Tools
+                            </h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> ARM/AVR
+                                    Microcontrollers</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> FreeRTOS
+                                </li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> JTAG/SWD
+                                    Debugging</li>
+                                <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i>
+                                    Oscilloscopes & Logic Analyzers</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/2">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="bg-deep-purple p-6 rounded-lg hover:transform hover:scale-105 transition-transform">
-                            <div class="text-accent text-3xl mb-2">
+
+                <div class="md:w-1/2 reveal">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-deep-purple/70 p-8 rounded-xl border border-accent/20 card-hover group">
+                            <div class="text-accent text-4xl mb-4 skill-icon">
                                 <i class="fas fa-microchip"></i>
                             </div>
-                            <h4 class="font-semibold text-xl mb-2">Firmware Development</h4>
-                            <p>Creating efficient, reliable code for microcontrollers</p>
+                            <h4 class="font-semibold text-xl mb-3 group-hover:text-accent transition-colors">Firmware
+                                Development</h4>
+                            <p class="text-gray-300">Creating efficient, reliable code for microcontrollers</p>
                         </div>
-                        <div class="bg-deep-purple p-6 rounded-lg hover:transform hover:scale-105 transition-transform">
-                            <div class="text-accent text-3xl mb-2">
+                        <div class="bg-deep-purple/70 p-8 rounded-xl border border-accent/20 card-hover group">
+                            <div class="text-accent text-4xl mb-4 skill-icon">
                                 <i class="fas fa-wifi"></i>
                             </div>
-                            <h4 class="font-semibold text-xl mb-2">IoT Solutions</h4>
-                            <p>Building connected devices with optimized power consumption</p>
+                            <h4 class="font-semibold text-xl mb-3 group-hover:text-accent transition-colors">IoT
+                                Solutions</h4>
+                            <p class="text-gray-300">Building connected devices with optimized power consumption</p>
                         </div>
-                        <div class="bg-deep-purple p-6 rounded-lg hover:transform hover:scale-105 transition-transform">
-                            <div class="text-accent text-3xl mb-2">
+                        <div class="bg-deep-purple/70 p-8 rounded-xl border border-accent/20 card-hover group">
+                            <div class="text-accent text-4xl mb-4 skill-icon">
                                 <i class="fas fa-code"></i>
                             </div>
-                            <h4 class="font-semibold text-xl mb-2">Protocol Solutions</h4>
-                            <p>Interfacing communication protocols for specialized applications</p>
+                            <h4 class="font-semibold text-xl mb-3 group-hover:text-accent transition-colors">Protocol
+                                Solutions</h4>
+                            <p class="text-gray-300">Interfacing communication protocols for specialized applications
+                            </p>
                         </div>
-                        <div class="bg-deep-purple p-6 rounded-lg hover:transform hover:scale-105 transition-transform">
-                            <div class="text-accent text-3xl mb-2">
+                        <div class="bg-deep-purple/70 p-8 rounded-xl border border-accent/20 card-hover group">
+                            <div class="text-accent text-4xl mb-4 skill-icon">
                                 <i class="fas fa-cogs"></i>
                             </div>
-                            <h4 class="font-semibold text-xl mb-2">Hardware Integration</h4>
-                            <p>Interfacing with sensors, actuators and complex hardware systems</p>
+                            <h4 class="font-semibold text-xl mb-3 group-hover:text-accent transition-colors">Hardware
+                                Integration</h4>
+                            <p class="text-gray-300">Interfacing with sensors, actuators and complex hardware systems
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -164,108 +580,140 @@
     </section>
 
     <!-- Work Experience -->
-    <section id="experience" class="py-20">
+    <section id="experience" class="py-20 relative overflow-hidden">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16 text-center">Work Experience</h2>
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">My Journey</div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    Work Experience</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-4"></div>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Experience Card 1 -->
-                <div class="bg-mid-purple/30 rounded-lg overflow-hidden group hover:bg-mid-purple/50 transition-colors">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-microchip text-accent text-xl"></i>
+                <!-- Experience Cards -->
+                <div
+                    class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 rounded-xl overflow-hidden group card-hover border border-accent/20 reveal">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mr-4 group-hover:bg-accent/40 transition-all">
+                                <i class="fas fa-microchip text-accent text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold">Embedded Engineer</h3>
-                                <p class="text-gray-300">GizanTech</p>
+                                <h3 class="text-2xl font-semibold group-hover:text-accent transition-colors">Embedded
+                                    Engineer</h3>
+                                <p class="text-gray-400 font-semibold">GizanTech</p>
                             </div>
                         </div>
-                        <p class="mb-4">Firmware development for smart home IoT devices using ESP32
-                            microcontrollers</p>
-                        <div class="flex space-x-2 mb-4">
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">ARM</span>
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">FreeRTOS</span>
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">BLE</span>
+                        <p class="mb-6 text-gray-300 leading-relaxed">Firmware development for smart home IoT devices
+                            using ESP32 microcontrollers with focus on power optimization</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">ARM</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">FreeRTOS</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">BLE</span>
                         </div>
-                        <a href="#" class="text-accent group-hover:text-white inline-flex items-center">
+                        <a href="#"
+                            class="text-accent group-hover:text-white inline-flex items-center font-semibold hover:translate-x-2 transition-transform">
                             Learn more
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Experience Card 2 -->
-                <div class="bg-mid-purple/30 rounded-lg overflow-hidden group hover:bg-mid-purple/50 transition-colors">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-robot text-accent text-xl"></i>
+                <div
+                    class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 rounded-xl overflow-hidden group card-hover border border-accent/20 reveal">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mr-4 group-hover:bg-accent/40 transition-all">
+                                <i class="fas fa-robot text-accent text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold">Embedded Systems Developer</h3>
-                                <p class="text-gray-300">Robotics Solutions Ltd.</p>
+                                <h3 class="text-2xl font-semibold group-hover:text-accent transition-colors">Embedded
+                                    Systems Developer</h3>
+                                <p class="text-gray-400 font-semibold">Robotics Solutions Ltd.</p>
                             </div>
                         </div>
-                        <p class="mb-4">Designed real-time control systems for autonomous robotics using C++ and RTOS
-                        </p>
-                        <div class="flex space-x-2 mb-4">
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">C++</span>
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">RTOS</span>
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">CAN</span>
+                        <p class="mb-6 text-gray-300 leading-relaxed">Designed real-time control systems for autonomous
+                            robotics using C++ and RTOS architecture</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">C++</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">RTOS</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">CAN</span>
                         </div>
-                        <a href="#" class="text-accent group-hover:text-white inline-flex items-center">
+                        <a href="#"
+                            class="text-accent group-hover:text-white inline-flex items-center font-semibold hover:translate-x-2 transition-transform">
                             Learn more
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Experience Card 3 -->
-                <div class="bg-mid-purple/30 rounded-lg overflow-hidden group hover:bg-mid-purple/50 transition-colors">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-heartbeat text-accent text-xl"></i>
+                <div
+                    class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 rounded-xl overflow-hidden group card-hover border border-accent/20 reveal">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mr-4 group-hover:bg-accent/40 transition-all">
+                                <i class="fas fa-heartbeat text-accent text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold">Firmware Engineer</h3>
-                                <p class="text-gray-300">MedTech Innovations</p>
+                                <h3 class="text-2xl font-semibold group-hover:text-accent transition-colors">Firmware
+                                    Engineer</h3>
+                                <p class="text-gray-400 font-semibold">MedTech Innovations</p>
                             </div>
                         </div>
-                        <p class="mb-4">Developed firmware for medical monitoring devices with strict safety
-                            requirements</p>
-                        <div class="flex space-x-2 mb-4">
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">C</span>
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">FDA</span>
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">ISO13485</span>
+                        <p class="mb-6 text-gray-300 leading-relaxed">Developed firmware for medical monitoring devices
+                            with strict safety requirements and compliance standards</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">C</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">FDA</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">ISO13485</span>
                         </div>
-                        <a href="#" class="text-accent group-hover:text-white inline-flex items-center">
+                        <a href="#"
+                            class="text-accent group-hover:text-white inline-flex items-center font-semibold hover:translate-x-2 transition-transform">
                             Learn more
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
                 </div>
 
-                <!-- Experience Card 4 -->
-                <div class="bg-mid-purple/30 rounded-lg overflow-hidden group hover:bg-mid-purple/50 transition-colors">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-satellite text-accent text-xl"></i>
+                <div
+                    class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 rounded-xl overflow-hidden group card-hover border border-accent/20 reveal">
+                    <div class="p-8">
+                        <div class="flex items-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mr-4 group-hover:bg-accent/40 transition-all">
+                                <i class="fas fa-satellite text-accent text-2xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-xl font-semibold">IoT Systems Engineer</h3>
-                                <p class="text-gray-300">ConnectedTech</p>
+                                <h3 class="text-2xl font-semibold group-hover:text-accent transition-colors">IoT Systems
+                                    Engineer</h3>
+                                <p class="text-gray-400 font-semibold">ConnectedTech</p>
                             </div>
                         </div>
-                        <p class="mb-4">Built low-power wireless sensor networks for industrial monitoring applications
-                        </p>
-                        <div class="flex space-x-2 mb-4">
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">LoRaWAN</span>
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">ESP32</span>
-                            <span class="bg-deep-purple px-2 py-1 rounded text-sm">MQTT</span>
+                        <p class="mb-6 text-gray-300 leading-relaxed">Built low-power wireless sensor networks for
+                            industrial monitoring applications using LoRaWAN</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">LoRaWAN</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">ESP32</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-full text-sm border border-accent/30 hover:border-accent transition-colors">MQTT</span>
                         </div>
-                        <a href="#" class="text-accent group-hover:text-white inline-flex items-center">
+                        <a href="#"
+                            class="text-accent group-hover:text-white inline-flex items-center font-semibold hover:translate-x-2 transition-transform">
                             Learn more
                             <i class="fas fa-arrow-right ml-2"></i>
                         </a>
@@ -276,112 +724,194 @@
     </section>
 
     <!-- Featured Projects Section -->
-    <section id="projects" class="py-20 bg-mid-purple/50">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4 text-center">Featured Projects</h2>
-            <p class="text-center mb-16 max-w-2xl mx-auto">
-                A collection of my most significant embedded systems projects, showcasing firmware development,
-                hardware integration, and innovative solutions.
-            </p>
+    <section id="projects"
+        class="py-20 bg-gradient-to-b from-deep-purple via-mid-purple/50 to-deep-purple relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-1/2 w-96 h-96 rounded-full bg-accent/30 blur-3xl animate-float"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-light-purple/30 blur-3xl animate-float"
+                style="animation-delay: 1.5s;"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">What I've Built</div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    Featured Projects</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed"></p>
+            </div>
 
-            <!-- Project 1, default color: bg-deep-purple p-4 -->
-            <div class="flex flex-col md:flex-row mb-20 items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-                    <h3 class="text-2xl font-bold mb-2">Smart Energy Monitor</h3>
-                    <p class="mb-4">
+            <!-- Project 1 -->
+            <div class="flex flex-col md:flex-row mb-20 items-center gap-12 reveal">
+                <div class="md:w-1/2">
+                    <div class="mb-4">
+                        <span
+                            class="inline-block bg-gradient-to-r from-accent/20 to-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold border border-accent/30 hover:border-accent transition-all">IoT
+                            Solution</span>
+                    </div>
+                    <h3
+                        class="text-4xl md:text-5xl font-bold mb-4 font-orbitron text-transparent bg-gradient-to-r from-white to-gray-200 bg-clip-text">
+                        Smart Energy Monitor</h3>
+                    <p class="mb-6 text-lg text-gray-300 leading-relaxed">
                         A low-power embedded system that monitors and optimizes energy consumption in homes and
                         buildings. Features real-time power measurement, data logging, and wireless connectivity.
                     </p>
-                    <div class="mb-6">
-                        <h4 class="text-accent font-semibold mb-2">Technologies Used:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">STM32</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">FreeRTOS</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">BLE</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">Power Management</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">Embedded C</span>
+                    <div class="mb-8">
+                        <h4 class="text-accent font-semibold mb-3 text-lg">Technologies Used:</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">STM32</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">FreeRTOS</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">BLE</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">Power
+                                Management</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">Embedded
+                                C</span>
                         </div>
                     </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="inline-flex items-center text-accent hover:underline">
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="inline-flex items-center text-accent hover:text-white font-semibold hover:translate-x-2 transition-all">
                             <i class="fas fa-code mr-2"></i> View Code
                         </a>
-                        <a href="#" class="inline-flex items-center text-accent hover:underline">
+                        <a href="#"
+                            class="inline-flex items-center text-accent hover:text-white font-semibold hover:translate-x-2 transition-all">
                             <i class="fas fa-external-link-alt mr-2"></i> Live Demo
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <div class="bg-blue-200 p-1 rounded-lg shadow-lg">
-                        <img src="/photos/eng.jpg" alt="Smart Energy Monitor" class="rounded">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-accent to-light-purple rounded-2xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="relative bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-3 rounded-2xl border border-accent/20 group-hover:border-accent/50 transition-all">
+                            <img src="/photos/eng.jpg"
+                                alt="Smart Energy Monitor IoT project - Real-time power consumption tracking embedded system"
+                                class="rounded-xl w-full hover:scale-110 transition-transform duration-500 shadow-lg">
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Project 2 -->
-            <div class="flex flex-col md:flex-row-reverse mb-20 items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pl-10">
-                    <h3 class="text-2xl font-bold mb-2">Autonomous Sensor Network</h3>
-                    <p class="mb-4">
+            <div class="flex flex-col md:flex-row-reverse mb-20 items-center gap-12 reveal">
+                <div class="md:w-1/2">
+                    <div class="mb-4">
+                        <span
+                            class="inline-block bg-gradient-to-r from-light-purple/20 to-accent/10 text-accent px-4 py-2 rounded-full text-sm font-semibold border border-light-purple/30 hover:border-light-purple transition-all">Sensor
+                            Network</span>
+                    </div>
+                    <h3
+                        class="text-4xl md:text-5xl font-bold mb-4 font-orbitron text-transparent bg-gradient-to-r from-white to-gray-200 bg-clip-text">
+                        Autonomous Sensor Network</h3>
+                    <p class="mb-6 text-lg text-gray-300 leading-relaxed">
                         A distributed network of self-configuring sensors for environmental monitoring with
                         long battery life and robust mesh networking capabilities.
                     </p>
-                    <div class="mb-6">
-                        <h4 class="text-accent font-semibold mb-2">Technologies Used:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">ESP32</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">LoRaWAN</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">I2C Sensors</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">Solar Harvesting</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">C++</span>
+                    <div class="mb-8">
+                        <h4 class="text-accent font-semibold mb-3 text-lg">Technologies Used:</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">ESP32</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">LoRaWAN</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">I2C
+                                Sensors</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">Solar
+                                Harvesting</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">C++</span>
                         </div>
                     </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="inline-flex items-center text-accent hover:underline">
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="inline-flex items-center text-accent hover:text-white font-semibold hover:translate-x-2 transition-all">
                             <i class="fas fa-code mr-2"></i> View Code
                         </a>
-                        <a href="#" class="inline-flex items-center text-accent hover:underline">
+                        <a href="#"
+                            class="inline-flex items-center text-accent hover:text-white font-semibold hover:translate-x-2 transition-all">
                             <i class="fas fa-external-link-alt mr-2"></i> Live Demo
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <div class="bg-blue-200 p-1 rounded-lg shadow-lg">
-                        <img src="/photos/gateway.png" alt="Autonomous Sensor Network" class="rounded">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-light-purple to-accent rounded-2xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="relative bg-gradient-to-br from-purple-500/20 to-blue-500/20 p-3 rounded-2xl border border-light-purple/20 group-hover:border-light-purple/50 transition-all">
+                            <img src="/photos/gateway.png"
+                                alt="Autonomous Sensor Network gateway with wireless communication module"
+                                class="rounded-xl w-full hover:scale-110 transition-transform duration-500 shadow-lg">
+                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Project 3 -->
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
-                    <h3 class="text-2xl font-bold mb-2">Real-time Motor Controller</h3>
-                    <p class="mb-4">
+            <div class="flex flex-col md:flex-row items-center gap-12 reveal">
+                <div class="md:w-1/2">
+                    <div class="mb-4">
+                        <span
+                            class="inline-block bg-gradient-to-r from-accent/20 to-light-purple/10 text-accent px-4 py-2 rounded-full text-sm font-semibold border border-accent/30 hover:border-accent transition-all">Industrial
+                            Control</span>
+                    </div>
+                    <h3
+                        class="text-4xl md:text-5xl font-bold mb-4 font-orbitron text-transparent bg-gradient-to-r from-white to-gray-200 bg-clip-text">
+                        Real-time Motor Controller</h3>
+                    <p class="mb-6 text-lg text-gray-300 leading-relaxed">
                         High-precision motor control system for industrial automation with advanced
                         feedback algorithms and safety features.
                     </p>
-                    <div class="mb-6">
-                        <h4 class="text-accent font-semibold mb-2">Technologies Used:</h4>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">ARM Cortex-M4</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">DSP</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">CAN Bus</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">Control Theory</span>
-                            <span class="bg-deep-purple px-3 py-1 rounded-full text-sm">C</span>
+                    <div class="mb-8">
+                        <h4 class="text-accent font-semibold mb-3 text-lg">Technologies Used:</h4>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">ARM
+                                Cortex-M4</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">DSP</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">CAN
+                                Bus</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">Control
+                                Theory</span>
+                            <span
+                                class="bg-deep-purple/80 px-4 py-2 rounded-lg text-sm border border-accent/30 hover:border-accent hover:scale-105 transition-all">C</span>
                         </div>
                     </div>
-                    <div class="flex space-x-4">
-                        <a href="#" class="inline-flex items-center text-accent hover:underline">
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="inline-flex items-center text-accent hover:text-white font-semibold hover:translate-x-2 transition-all">
                             <i class="fas fa-code mr-2"></i> View Code
                         </a>
-                        <a href="#" class="inline-flex items-center text-accent hover:underline">
+                        <a href="#"
+                            class="inline-flex items-center text-accent hover:text-white font-semibold hover:translate-x-2 transition-all">
                             <i class="fas fa-external-link-alt mr-2"></i> Live Demo
                         </a>
                     </div>
                 </div>
                 <div class="md:w-1/2">
-                    <div class="bg-blue-200 p-1 rounded-lg shadow-lg">
-                        <img src="/photos/agritech.png" alt="Real-time Motor Controller" class="rounded">
+                    <div class="relative group">
+                        <div
+                            class="absolute -inset-4 bg-gradient-to-r from-accent to-light-purple rounded-2xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500">
+                        </div>
+                        <div
+                            class="relative bg-gradient-to-br from-blue-500/20 to-purple-500/20 p-3 rounded-2xl border border-accent/20 group-hover:border-accent/50 transition-all">
+                            <img src="/photos/agritech.png"
+                                alt="Real-time Motor Controller firmware with precision speed control for agricultural automation"
+                                class="rounded-xl w-full hover:scale-110 transition-transform duration-500 shadow-lg">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -389,94 +919,620 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20">
+    <section id="skills" class="py-20 relative overflow-hidden">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4 text-center">Technical Skills</h2>
-            <p class="text-center mb-16 max-w-2xl mx-auto">
-                My expertise spans hardware interfacing, firmware development, and system optimization
-                for resource-constrained embedded environments.
-            </p>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="text-center mb-16 reveal">
+                    <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">My Expertise</div>
+                    <h2
+                        class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                        Technical Skills</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6">
+                    </div>
+                    <p class="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed"></p>
+                </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-                <!-- Skill icons -->
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-microchip"></i></div>
-                    <h3 class="font-semibold">Embedded C/C++</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-microchip"></i></div>
+                        <h3 class="font-semibold text-lg">Embedded C/C++</h3>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-cogs"></i></div>
+                        <h3 class="font-semibold text-lg">RTOS</h3>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-wifi"></i></div>
+                        <h3 class="font-semibold text-lg">Wireless Protocols</h3>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-bolt"></i></div>
+                        <h3 class="font-semibold text-lg">Low Power Design</h3>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-project-diagram"></i></div>
+                        <h3 class="font-semibold text-lg">Digital Comms</h3>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-microphone-alt"></i></div>
+                        <h3 class="font-semibold text-lg">Sensor Integration</h3>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-memory"></i></div>
+                        <h3 class="font-semibold text-lg">MCU Architecture</h3>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="font-semibold text-lg">Security</h3>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-bug"></i></div>
+                        <h3 class="font-semibold text-lg">Debugging</h3>
+                    </div>
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-xl text-center card-hover border border-accent/20 reveal">
+                        <div class="text-5xl mb-4 text-accent skill-icon"><i class="fas fa-network-wired"></i></div>
+                        <h3 class="font-semibold text-lg">Protocols</h3>
+                    </div>
                 </div>
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-cogs"></i></div>
-                    <h3 class="font-semibold">RTOS</h3>
+            </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education"
+        class="py-20 bg-gradient-to-b from-deep-purple via-mid-purple/50 to-deep-purple relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-1/3 w-96 h-96 rounded-full bg-accent/30 blur-3xl animate-float"></div>
+            <div class="absolute bottom-0 left-1/4 w-96 h-96 rounded-full bg-light-purple/30 blur-3xl animate-float"
+                style="animation-delay: 1.5s;"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">Academic Foundation</div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    Education</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div
+                    class="bg-gradient-to-br from-mid-purple/60 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal">
+                    <div class="flex items-start mb-6">
+                        <div
+                            class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-accent text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Bachelor's Degree</h3>
+                            <p class="text-accent font-semibold text-sm">Electrical Engineering</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Specialized in Digital Systems and Microcontroller
+                        Design with a focus on embedded systems and IoT applications.</p>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <i class="fas fa-calendar-alt mr-2 text-accent"></i>
+                        <span>2020 - 2024</span>
+                    </div>
                 </div>
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-wifi"></i></div>
-                    <h3 class="font-semibold">Wireless Protocols</h3>
+
+                <div class="bg-gradient-to-br from-mid-purple/60 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal"
+                    style="animation-delay: 0.1s;">
+                    <div class="flex items-start mb-6">
+                        <div
+                            class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-book text-accent text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Diploma</h3>
+                            <p class="text-accent font-semibold text-sm">Electronics & Telecommunications</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Comprehensive training in circuit design, signal
+                        processing, and fundamental embedded systems development.</p>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <i class="fas fa-calendar-alt mr-2 text-accent"></i>
+                        <span>2018 - 2020</span>
+                    </div>
                 </div>
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-bolt"></i></div>
-                    <h3 class="font-semibold">Low Power Design</h3>
-                </div>
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-project-diagram"></i></div>
-                    <h3 class="font-semibold">Digital Comms</h3>
-                </div>
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-microphone-alt"></i></div>
-                    <h3 class="font-semibold">Sensor Integration</h3>
-                </div>
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-memory"></i></div>
-                    <h3 class="font-semibold">MCU Architecture</h3>
-                </div>
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-shield-alt"></i></div>
-                    <h3 class="font-semibold">Security</h3>
-                </div>
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-bug"></i></div>
-                    <h3 class="font-semibold">Debugging</h3>
-                </div>
-                <div class="bg-mid-purple/30 p-6 rounded-lg text-center hover:bg-mid-purple transition-colors">
-                    <div class="text-5xl mb-4 text-accent"><i class="fas fa-network-wired"></i></div>
-                    <h3 class="font-semibold">Protocols</h3>
+
+                <div class="bg-gradient-to-br from-mid-purple/60 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal"
+                    style="animation-delay: 0.2s;">
+                    <div class="flex items-start mb-6">
+                        <div
+                            class="w-14 h-14 bg-accent/20 rounded-xl flex items-center justify-center mr-4 flex-shrink-0">
+                            <i class="fas fa-code text-accent text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold">Certifications</h3>
+                            <p class="text-accent font-semibold text-sm">Professional Training</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Advanced training in ARM Cortex-M development, RTOS,
+                        and IoT protocols from industry-leading institutions.</p>
+                    <div class="flex items-center text-sm text-gray-400">
+                        <i class="fas fa-calendar-alt mr-2 text-accent"></i>
+                        <span>Ongoing</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Lab Section -->
-    <section id="lab" class="py-20 bg-mid-purple/50">
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 relative overflow-hidden">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-4 text-center">My Lab</h2>
-            <p class="text-center mb-16 max-w-2xl mx-auto">
-                A glimpse of my embedded systems workbench where I prototype, test, and develop projects.
-            </p>
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">Professional Credentials
+                </div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    Certifications</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
+            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="/photos/oscilloscope.png" alt="Oscilloscope"
-                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-deep-purple to-transparent opacity-80"></div>
-                    <div class="absolute bottom-0 left-0 p-4">
-                        <h3 class="text-xl font-semibold">Debugging Station</h3>
-                        <p>Oscilloscope and Logic Analyzer setup</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div
+                    class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal group">
+                    <div class="flex items-start mb-4">
+                        <div
+                            class="w-12 h-12 bg-accent/90 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-accent transition-all">
+                            <i class="fas fa-award text-white text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold group-hover:text-accent transition-colors">ARM Cortex-M Expert
+                            </h3>
+                            <p class="text-accent text-sm font-semibold">Arm Ltd.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Professional certification in ARM Cortex-M microcontroller
+                        architecture and development.</p>
+                    <p class="text-xs text-gray-400"><i class="fas fa-certificate text-accent mr-2"></i>ID: ARM-2024-001
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal group"
+                    style="animation-delay: 0.1s;">
+                    <div class="flex items-start mb-4">
+                        <div
+                            class="w-12 h-12 bg-accent/90 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-accent transition-all">
+                            <i class="fas fa-microchip text-white text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold group-hover:text-accent transition-colors">RTOS Development
+                            </h3>
+                            <p class="text-accent text-sm font-semibold">FreeRTOS Academy</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Expert certification in Real-Time Operating Systems development and
+                        task scheduling.</p>
+                    <p class="text-xs text-gray-400"><i class="fas fa-certificate text-accent mr-2"></i>ID:
+                        RTOS-2024-002</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal group"
+                    style="animation-delay: 0.2s;">
+                    <div class="flex items-start mb-4">
+                        <div
+                            class="w-12 h-12 bg-accent/90 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-accent transition-all">
+                            <i class="fas fa-wifi text-white text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold group-hover:text-accent transition-colors">IoT & Wireless
+                                Protocols</h3>
+                            <p class="text-accent text-sm font-semibold">IoT Academy</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Comprehensive certification in IoT protocols including LoRaWAN,
+                        Bluetooth, and WiFi integration.</p>
+                    <p class="text-xs text-gray-400"><i class="fas fa-certificate text-accent mr-2"></i>ID: IOT-2024-003
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal group"
+                    style="animation-delay: 0.3s;">
+                    <div class="flex items-start mb-4">
+                        <div
+                            class="w-12 h-12 bg-accent/90 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:bg-accent transition-all">
+                            <i class="fas fa-lock text-white text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold group-hover:text-accent transition-colors">Embedded Security
+                            </h3>
+                            <p class="text-accent text-sm font-semibold">Security+ Institute</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-4">Certification in embedded system security, encryption, and secure
+                        firmware development.</p>
+                    <p class="text-xs text-gray-400"><i class="fas fa-certificate text-accent mr-2"></i>ID: SEC-2024-004
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Honors & Awards Section -->
+    <section id="awards"
+        class="py-20 bg-gradient-to-b from-deep-purple via-mid-purple/50 to-deep-purple relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-1/4 left-1/3 w-96 h-96 rounded-full bg-accent/30 blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/3 w-96 h-96 rounded-full bg-light-purple/30 blur-3xl animate-float"
+                style="animation-delay: 1.5s;"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">Recognition</div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    Honors & Awards</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div
+                    class="bg-gradient-to-r from-mid-purple/60 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal group flex items-start">
+                    <div
+                        class="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mr-6 flex-shrink-0 group-hover:bg-accent/40 transition-all">
+                        <i class="fas fa-star text-accent text-3xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-2">Best Embedded Systems Project</h3>
+                        <p class="text-accent font-semibold mb-2">National Tech Conference 2024</p>
+                        <p class="text-gray-300">Awarded for innovative IoT solution development with exceptional
+                            firmware optimization.</p>
                     </div>
                 </div>
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="/photos/agritech.png" alt="Development Boards"
-                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-deep-purple to-transparent opacity-80"></div>
-                    <div class="absolute bottom-0 left-0 p-4">
-                        <h3 class="text-xl font-semibold">Development Boards</h3>
-                        <p>Collection of MCUs and SBCs</p>
+
+                <div class="bg-gradient-to-r from-mid-purple/60 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal group flex items-start"
+                    style="animation-delay: 0.1s;">
+                    <div
+                        class="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mr-6 flex-shrink-0 group-hover:bg-accent/40 transition-all">
+                        <i class="fas fa-trophy text-accent text-3xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-2">Innovation Excellence Award</h3>
+                        <p class="text-accent font-semibold mb-2">Tech Innovation Summit 2024</p>
+                        <p class="text-gray-300">Recognition for developing cutting-edge solutions in IoT and embedded
+                            systems.</p>
                     </div>
                 </div>
-                <div class="relative group overflow-hidden rounded-lg">
-                    <img src="/photos/eng.jpg" alt="Prototype"
-                        class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-deep-purple to-transparent opacity-80"></div>
-                    <div class="absolute bottom-0 left-0 p-4">
-                        <h3 class="text-xl font-semibold">Current Project</h3>
-                        <p>Smart sensor prototype</p>
+
+                <div class="bg-gradient-to-r from-mid-purple/60 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal group flex items-start"
+                    style="animation-delay: 0.2s;">
+                    <div
+                        class="w-16 h-16 bg-accent/20 rounded-xl flex items-center justify-center mr-6 flex-shrink-0 group-hover:bg-accent/40 transition-all">
+                        <i class="fas fa-medal text-accent text-3xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-2xl font-bold mb-2">Developer of the Year</h3>
+                        <p class="text-accent font-semibold mb-2">Tech Community Recognition 2023</p>
+                        <p class="text-gray-300">Selected as top emerging developer for contributions to embedded
+                            systems community.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Extra Curricular Activities Section -->
+    <section id="activities" class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">Beyond Work</div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    Extra Curricular Activities</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal">
+                    <div class="text-4xl mb-4 text-accent"><i class="fas fa-users"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Tech Community Lead</h3>
+                    <p class="text-gray-300 mb-4">Organizing monthly meetups and workshops for embedded systems
+                        enthusiasts and developers.</p>
+                    <p class="text-sm text-accent font-semibold flex items-center"><i
+                            class="fas fa-star text-yellow-400 mr-2"></i>Active Member</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal"
+                    style="animation-delay: 0.1s;">
+                    <div class="text-4xl mb-4 text-accent"><i class="fas fa-book-open"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Technical Blogging</h3>
+                    <p class="text-gray-300 mb-4">Writing in-depth articles about embedded systems, firmware design, and
+                        IoT technologies.</p>
+                    <p class="text-sm text-accent font-semibold flex items-center"><i class="fas fa-edit mr-2"></i>25+
+                        Articles Published</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal"
+                    style="animation-delay: 0.2s;">
+                    <div class="text-4xl mb-4 text-accent"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Mentorship Program</h3>
+                    <p class="text-gray-300 mb-4">Mentoring junior developers in embedded systems and providing career
+                        guidance.</p>
+                    <p class="text-sm text-accent font-semibold flex items-center"><i
+                            class="fas fa-handshake mr-2"></i>10+ Mentees</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal"
+                    style="animation-delay: 0.3s;">
+                    <div class="text-4xl mb-4 text-accent"><i class="fas fa-code-branch"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Open Source Contributor</h3>
+                    <p class="text-gray-300 mb-4">Contributing to popular embedded systems and IoT open source projects.
+                    </p>
+                    <p class="text-sm text-accent font-semibold flex items-center"><i
+                            class="fas fa-github mr-2"></i>Active Contributor</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal"
+                    style="animation-delay: 0.4s;">
+                    <div class="text-4xl mb-4 text-accent"><i class="fas fa-flask"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Hackathon Participant</h3>
+                    <p class="text-gray-300 mb-4">Participating in tech hackathons and innovation challenges regularly.
+                    </p>
+                    <p class="text-sm text-accent font-semibold flex items-center"><i class="fas fa-trophy mr-2"></i>3x
+                        Winner</p>
+                </div>
+
+                <div class="bg-gradient-to-br from-mid-purple/40 to-deep-purple/40 p-8 rounded-2xl border border-accent/20 card-hover reveal"
+                    style="animation-delay: 0.5s;">
+                    <div class="text-4xl mb-4 text-accent"><i class="fas fa-robot"></i></div>
+                    <h3 class="text-2xl font-bold mb-3">Robotics Club</h3>
+                    <p class="text-gray-300 mb-4">Building and designing autonomous systems and competing in national
+                        competitions.</p>
+                    <p class="text-sm text-accent font-semibold flex items-center"><i
+                            class="fas fa-medal mr-2"></i>Competition Finalist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Reviews Section -->
+    <section id="reviews"
+        class="py-20 bg-gradient-to-b from-deep-purple via-mid-purple/50 to-deep-purple relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-1/4 w-96 h-96 rounded-full bg-accent/30 blur-3xl animate-float"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 rounded-full bg-light-purple/30 blur-3xl animate-float"
+                style="animation-delay: 1.5s;"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">Testimonials</div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    Client Reviews</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="relative">
+                    <div class="overflow-hidden rounded-2xl">
+                        <div id="reviewsSlider" class="flex transition-transform duration-500 ease-out">
+                            <!-- Review 1 -->
+                            <div
+                                class="w-full flex-shrink-0 bg-gradient-to-br from-mid-purple/60 to-deep-purple/40 p-8 md:p-12 rounded-2xl border border-accent/20">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-user text-accent text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-xl">Ahmed Hassan</p>
+                                        <p class="text-accent text-sm font-semibold">CEO, TechVision Corp</p>
+                                    </div>
+                                </div>
+                                <div class="flex mb-6 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-gray-300 text-lg leading-relaxed italic mb-4">"Zahid's expertise in
+                                    embedded systems is exceptional. He delivered our IoT project ahead of schedule with
+                                    excellent code quality and attention to detail."</p>
+                                <div class="flex items-center text-accent text-sm"><i
+                                        class="fas fa-check-circle mr-2"></i>Verified Client</div>
+                            </div>
+                            <!-- Review 2 -->
+                            <div
+                                class="w-full flex-shrink-0 bg-gradient-to-br from-mid-purple/60 to-deep-purple/40 p-8 md:p-12 rounded-2xl border border-accent/20">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-user text-accent text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-xl">Fiona Smith</p>
+                                        <p class="text-accent text-sm font-semibold">Product Manager, InnovateTech</p>
+                                    </div>
+                                </div>
+                                <div class="flex mb-6 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-gray-300 text-lg leading-relaxed italic mb-4">"Professional, reliable,
+                                    and incredibly knowledgeable. Zahid is the go-to person for complex embedded systems
+                                    challenges and innovative solutions."</p>
+                                <div class="flex items-center text-accent text-sm"><i
+                                        class="fas fa-check-circle mr-2"></i>Verified Client</div>
+                            </div>
+                            <!-- Review 3 -->
+                            <div
+                                class="w-full flex-shrink-0 bg-gradient-to-br from-mid-purple/60 to-deep-purple/40 p-8 md:p-12 rounded-2xl border border-accent/20">
+                                <div class="flex items-center mb-6">
+                                    <div
+                                        class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                        <i class="fas fa-user text-accent text-2xl"></i>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-xl">Marcus Johnson</p>
+                                        <p class="text-accent text-sm font-semibold">CTO, ConnectedSys</p>
+                                    </div>
+                                </div>
+                                <div class="flex mb-6 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <p class="text-gray-300 text-lg leading-relaxed italic mb-4">"Exceptional
+                                    problem-solving skills and deep technical knowledge. Zahid is the ideal partner for
+                                    any embedded systems project requiring excellence and innovation."</p>
+                                <div class="flex items-center text-accent text-sm"><i
+                                        class="fas fa-check-circle mr-2"></i>Verified Client</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Buttons -->
+                    <button id="prevReview"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 md:-translate-x-20 bg-accent hover:bg-accent/80 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all hover:scale-110 z-10 shadow-lg">
+                        <i class="fas fa-chevron-left text-xl"></i>
+                    </button>
+                    <button id="nextReview"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 md:translate-x-20 bg-accent hover:bg-accent/80 w-12 h-12 rounded-full flex items-center justify-center text-white transition-all hover:scale-110 z-10 shadow-lg">
+                        <i class="fas fa-chevron-right text-xl"></i>
+                    </button>
+                </div>
+                <!-- Dots Indicator -->
+                <div class="flex justify-center gap-3 mt-8">
+                    <button class="reviewDot w-3 h-3 rounded-full bg-accent transition-all" data-index="0"></button>
+                    <button class="reviewDot w-3 h-3 rounded-full bg-gray-600 hover:bg-accent/60 transition-all"
+                        data-index="1"></button>
+                    <button class="reviewDot w-3 h-3 rounded-full bg-gray-600 hover:bg-accent/60 transition-all"
+                        data-index="2"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">Visual Journey</div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    Photo Gallery</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="relative group overflow-hidden rounded-2xl card-hover reveal h-72">
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-r from-accent to-light-purple rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500">
+                    </div>
+                    <div class="relative h-full">
+                        <img src="/photos/zahid.jpg"
+                            alt="Zahid Hasan professional portrait - Embedded systems engineer and developer"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent rounded-xl">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-4 w-full">
+                            <h3 class="font-bold">Professional Portrait</h3>
+                            <p class="text-xs text-gray-300">Studio Photography</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl card-hover reveal h-72"
+                    style="animation-delay: 0.1s;">
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-r from-light-purple to-accent rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500">
+                    </div>
+                    <div class="relative h-full">
+                        <img src="/photos/oscilloscope.png"
+                            alt="Electronics lab setup with oscilloscope and test equipment for embedded systems debugging"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent rounded-xl">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-4 w-full">
+                            <h3 class="font-bold">Lab Equipment</h3>
+                            <p class="text-xs text-gray-300">Testing & Debugging</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl card-hover reveal h-72"
+                    style="animation-delay: 0.2s;">
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-r from-accent to-light-purple rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500">
+                    </div>
+                    <div class="relative h-full">
+                        <img src="/photos/eng.jpg" alt="IoT project development and firmware engineering in progress"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent rounded-xl">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-4 w-full">
+                            <h3 class="font-bold">Project Development</h3>
+                            <p class="text-xs text-gray-300">Prototyping</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl card-hover reveal h-72"
+                    style="animation-delay: 0.3s;">
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-r from-light-purple to-accent rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500">
+                    </div>
+                    <div class="relative h-full">
+                        <img src="/photos/gateway.png"
+                            alt="Hardware integration and networking gateway configuration for embedded systems"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent rounded-xl">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-4 w-full">
+                            <h3 class="font-bold">Hardware Integration</h3>
+                            <p class="text-xs text-gray-300">IoT Solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl card-hover reveal h-72"
+                    style="animation-delay: 0.4s;">
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-r from-accent to-light-purple rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500">
+                    </div>
+                    <div class="relative h-full">
+                        <img src="/photos/agritech.png"
+                            alt="Collaborative embedded systems development and team project execution"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent rounded-xl">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-4 w-full">
+                            <h3 class="font-bold">Collaboration</h3>
+                            <p class="text-xs text-gray-300">Team Projects</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group overflow-hidden rounded-2xl card-hover reveal h-72"
+                    style="animation-delay: 0.5s;">
+                    <div
+                        class="absolute -inset-2 bg-gradient-to-r from-light-purple to-accent rounded-2xl blur-lg opacity-40 group-hover:opacity-80 transition-all duration-500">
+                    </div>
+                    <div class="relative h-full">
+                        <img src="/photos/zahid.jpg"
+                            alt="Zahid Hasan speaking at technical event about embedded systems and IoT"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-xl">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent rounded-xl">
+                        </div>
+                        <div class="absolute bottom-0 left-0 p-4 w-full">
+                            <h3 class="font-bold">Speaking Engagements</h3>
+                            <p class="text-xs text-gray-300">Tech Events</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -484,157 +1540,284 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-10 md:mb-0">
-                    <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
-                    <p class="mb-8 max-w-md">
+    <section id="contact" class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-accent/10 blur-3xl animate-float"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-light-purple/10 blur-3xl animate-float"
+                style="animation-delay: 1.5s;"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <div class="text-accent font-semibold mb-2 tracking-widest uppercase text-sm">Let's Connect</div>
+                <h2
+                    class="text-5xl md:text-6xl font-bold mb-4 font-orbitron bg-gradient-to-r from-accent via-light-purple to-accent bg-clip-text text-transparent">
+                    Get In Touch</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-transparent via-accent to-transparent mx-auto mb-6"></div>
+                <p class="max-w-2xl mx-auto text-gray-300 text-lg leading-relaxed"></p>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-12 max-w-6xl mx-auto">
+                <div class="md:w-1/2 reveal">
+                    <h3 class="text-3xl font-bold mb-6">Let's work together!</h3>
+                    <p class="mb-8 text-lg text-gray-300 leading-relaxed">
                         I'm currently looking to join a cross-functional team that values innovation and technical
-                        excellence.
-                        Have a project in mind? Let's discuss how we can collaborate.
+                        excellence. Have a project in mind? Let's discuss how we can collaborate.
                     </p>
-                    <div class="flex space-x-4 mb-8">
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center hover:bg-accent transition-colors">
-                            <i class="fas fa-envelope"></i>
-                        </a>
+
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center group">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-mid-purple flex items-center justify-center mr-4 group-hover:bg-accent transition-all">
+                                <i class="fas fa-envelope text-accent text-xl group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-400">Email</div>
+                                <span class="text-lg font-semibold">email@example.com</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center group">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-mid-purple flex items-center justify-center mr-4 group-hover:bg-accent transition-all">
+                                <i class="fas fa-map-marker-alt text-accent text-xl group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-400">Location</div>
+                                <span class="text-lg font-semibold">Dhaka, Bangladesh</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center group">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-mid-purple flex items-center justify-center mr-4 group-hover:bg-accent transition-all">
+                                <i class="fas fa-phone text-accent text-xl group-hover:text-white"></i>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-400">Phone</div>
+                                <span class="text-lg font-semibold">+1 (123) 456-7890</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope text-accent"></i>
-                            </div>
-                            <span>email@example.com</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center mr-4">
-                                <i class="fas fa-map-marker-alt text-accent"></i>
-                            </div>
-                            <span>Dhaka, Bangladesh</span>
-                        </div>
-                        <div class="flex items-center">
-                            <div class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center mr-4">
-                                <i class="fas fa-phone text-accent"></i>
-                            </div>
-                            <span>+1 (123) 456-7890</span>
-                        </div>
+
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-mid-purple flex items-center justify-center hover:bg-accent transition-all hover:scale-110">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-mid-purple flex items-center justify-center hover:bg-accent transition-all hover:scale-110">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-mid-purple flex items-center justify-center hover:bg-accent transition-all hover:scale-110">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-mid-purple flex items-center justify-center hover:bg-accent transition-all hover:scale-110">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="md:w-1/2">
-                    <form class="bg-mid-purple/30 rounded-lg p-8">
-                        <h3 class="text-2xl font-semibold mb-6">Send Me a Message</h3>
-                        <div class="mb-6">
-                            <label for="name" class="block mb-2 text-sm font-medium">Your Name</label>
-                            <input type="text" id="name"
-                                class="bg-deep-purple border border-gray-700 text-white text-sm rounded-lg block w-full p-3 focus:border-accent focus:outline-none">
+
+                <div class="md:w-1/2 reveal">
+                    <div
+                        class="bg-gradient-to-br from-mid-purple/60 to-deep-purple/40 rounded-2xl p-8 shadow-2xl border border-accent/20 card-hover">
+                        <div class="flex items-center mb-6">
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-accent/30 rounded-full blur-md"></div>
+                                <img src="/photos/zahid.jpg" alt="Zahid"
+                                    class="relative w-24 h-24 rounded-full mr-6 object-cover border-4 border-accent/50">
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold font-orbitron">Zahid Hasan</h3>
+                                <p class="text-sm text-accent font-semibold">Embedded Systems Developer</p>
+                            </div>
                         </div>
-                        <div class="mb-6">
-                            <label for="email" class="block mb-2 text-sm font-medium">Your Email</label>
-                            <input type="email" id="email"
-                                class="bg-deep-purple border border-gray-700 text-white text-sm rounded-lg block w-full p-3 focus:border-accent focus:outline-none">
+
+                        <p class="mb-8 text-gray-300 leading-relaxed">
+                            Open to opportunities — available for freelance and full-time roles. I build reliable
+                            firmware and hardware integrations for real-world products.
+                        </p>
+
+                        <div class="space-y-4">
+                            <a href="mailto:email@example.com"
+                                class="block text-center bg-accent hover:bg-accent/80 text-white px-6 py-4 rounded-xl font-semibold transition-all hover:scale-105 hover:shadow-lg hover:shadow-accent/50">
+                                <i class="fas fa-envelope mr-2"></i>Send Email
+                            </a>
+                            <a href="#"
+                                class="block text-center border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 py-4 rounded-xl font-semibold transition-all hover:scale-105">
+                                <i class="fab fa-linkedin-in mr-2"></i>Connect on LinkedIn
+                            </a>
+                            <a href="/photos/resume.pdf"
+                                class="block text-center bg-deep-purple/80 hover:bg-deep-purple text-white border border-accent/30 px-6 py-4 rounded-xl font-semibold transition-all hover:scale-105">
+                                <i class="fas fa-download mr-2"></i>Download Resume
+                            </a>
                         </div>
-                        <div class="mb-6">
-                            <label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
-                            <input type="text" id="subject"
-                                class="bg-deep-purple border border-gray-700 text-white text-sm rounded-lg block w-full p-3 focus:border-accent focus:outline-none">
+
+                        <div class="mt-8 pt-8 border-t border-accent/20 grid grid-cols-2 gap-4">
+                            <div>
+                                <div class="text-sm text-gray-400 mb-1">Location</div>
+                                <div class="font-semibold">Dhaka, Bangladesh</div>
+                            </div>
+                            <div>
+                                <div class="text-sm text-gray-400 mb-1">Availability</div>
+                                <div class="font-semibold text-green-400">
+                                    <i class="fas fa-circle text-xs mr-1 animate-pulse"></i>Open to hire
+                                </div>
+                            </div>
                         </div>
-                        <div class="mb-6">
-                            <label for="message" class="block mb-2 text-sm font-medium">Message</label>
-                            <textarea id="message" rows="4"
-                                class="bg-deep-purple border border-gray-700 text-white text-sm rounded-lg block w-full p-3 focus:border-accent focus:outline-none"></textarea>
-                        </div>
-                        <button type="submit"
-                            class="text-white bg-accent hover:bg-accent/80 rounded-lg px-5 py-3 w-full transition-colors">Send
-                            Message</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-deep-purple py-10 border-t border-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="logo text-3xl font-bold mb-4 md:mb-0">
-                    <span class="text-accent">Zahid</span>
+    <!-- Enhanced Footer -->
+    <footer class="bg-gradient-to-b from-deep-purple to-black py-16 border-t border-accent/20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-full h-full"
+                style="background-image: radial-gradient(circle at 2px 2px, rgba(138, 92, 245, 0.3) 1px, transparent 0); background-size: 40px 40px;">
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand Column -->
+                <div>
+                    <div class="logo text-4xl font-orbitron font-black mb-4">
+                        <span class="gradient-text">&lt;ZAHID/&gt;</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 leading-relaxed">
+                        Crafting innovative embedded solutions that power the future of IoT and smart devices.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-mid-purple flex items-center justify-center hover:bg-accent transition-all hover:scale-110 group">
+                            <i class="fab fa-github text-xl group-hover:rotate-12 transition-transform"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-mid-purple flex items-center justify-center hover:bg-accent transition-all hover:scale-110 group">
+                            <i class="fab fa-linkedin-in text-xl group-hover:rotate-12 transition-transform"></i>
+                        </a>
+                        <a href="#"
+                            class="w-12 h-12 rounded-xl bg-mid-purple flex items-center justify-center hover:bg-accent transition-all hover:scale-110 group">
+                            <i class="fab fa-twitter text-xl group-hover:rotate-12 transition-transform"></i>
+                        </a>
+                    </div>
                 </div>
-                <div class="flex space-x-8 mb-4 md:mb-0">
-                    <a href="#home" class="hover:text-accent transition-colors">Home</a>
-                    <a href="#about" class="hover:text-accent transition-colors">About</a>
-                    <a href="#projects" class="hover:text-accent transition-colors">Projects</a>
-                    <a href="#lab" class="hover:text-accent transition-colors">Lab</a>
-                    <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-accent">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="#about"
+                                class="text-gray-400 hover:text-accent transition-colors flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>About
+                                Me
+                            </a></li>
+                        <li><a href="#projects"
+                                class="text-gray-400 hover:text-accent transition-colors flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>Projects
+                            </a></li>
+                        <li><a href="#education"
+                                class="text-gray-400 hover:text-accent transition-colors flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>Education
+                            </a></li>
+                        <li><a href="#gallery"
+                                class="text-gray-400 hover:text-accent transition-colors flex items-center group">
+                                <i
+                                    class="fas fa-chevron-right text-xs mr-2 group-hover:translate-x-1 transition-transform"></i>Photo
+                                Gallery
+                            </a></li>
+                    </ul>
                 </div>
-                <div class="flex space-x-4">
-                    <a href="#"
-                        class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center hover:bg-accent transition-colors">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="#"
-                        class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center hover:bg-accent transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#"
-                        class="w-10 h-10 rounded-full bg-mid-purple flex items-center justify-center hover:bg-accent transition-colors">
-                        <i class="fab fa-twitter"></i>
-                    </a>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-accent">Contact Info</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-envelope text-accent mt-1 mr-3"></i>
+                            <span>email@example.com</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-map-marker-alt text-accent mt-1 mr-3"></i>
+                            <span>Dhaka, Bangladesh</span>
+                        </li>
+                        <li class="flex items-start text-gray-400">
+                            <i class="fas fa-phone text-accent mt-1 mr-3"></i>
+                            <span>+1 (123) 456-7890</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
-            <div class="text-center mt-8 text-gray-400">
-                <p>&copy; 2025 codewithzahid. All rights reserved.</p>
+
+            <!-- Bottom Bar -->
+            <div class="pt-8 border-t border-accent/20">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        &copy; 2025 <span class="text-accent font-semibold">codewithzahid</span>. All rights reserved.
+                    </p>
+                    <p class="text-gray-400 text-sm">
+                        Designed & Developed with <i class="fas fa-heart text-red-500 mx-1 animate-pulse"></i> by Zahid
+                        Hasan
+                    </p>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Back to top button -->
     <button id="backToTop"
-        class="fixed bottom-8 right-8 bg-accent hover:bg-accent/80 w-12 h-12 rounded-full flex items-center justify-center text-white shadow-lg opacity-0 transition-opacity duration-300">
-        <i class="fas fa-arrow-up"></i>
+        class="fixed bottom-8 right-8 bg-accent hover:bg-accent/80 w-14 h-14 rounded-xl flex items-center justify-center text-white shadow-lg opacity-0 transition-all duration-300 hover:scale-110 z-50">
+        <i class="fas fa-arrow-up text-xl"></i>
     </button>
 
-    <!-- Modal (Hidden by Default) -->
-    <div id="construction-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-        <div class="bg-white p-6 rounded-lg shadow-lg w-96 text-center">
-            <h2 class="text-2xl font-bold text-red-600 mb-4">🚧 Site Under Construction 🚧</h2>
-            <p class="text-gray-800 mb-4">Thanks for visiting my Portfolio. I am working hard to bring you something
-                awesome. Stay tuned!</p>
-            <button id="close-modal" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md">
-                Close
-            </button>
-        </div>
-    </div>
-
     <script>
-        // Show the modal when the page loads
-        window.addEventListener("load", function () {
-            document.getElementById("construction-modal").classList.remove("hidden");
+        // Reviews Slider functionality
+        let currentReviewIndex = 0;
+        const reviewsSlider = document.getElementById('reviewsSlider');
+        const reviewDots = document.querySelectorAll('.reviewDot');
+        const totalReviews = 3;
+
+        function updateSlider() {
+            reviewsSlider.style.transform = `translateX(-${currentReviewIndex * 100}%)`;
+            reviewDots.forEach((dot, index) => {
+                if (index === currentReviewIndex) {
+                    dot.classList.remove('bg-gray-600');
+                    dot.classList.add('bg-accent');
+                } else {
+                    dot.classList.remove('bg-accent');
+                    dot.classList.add('bg-gray-600');
+                }
+            });
+        }
+
+        document.getElementById('prevReview').addEventListener('click', () => {
+            currentReviewIndex = (currentReviewIndex - 1 + totalReviews) % totalReviews;
+            updateSlider();
         });
 
-        // Close the modal when the button is clicked
-        document.getElementById("close-modal").addEventListener("click", function () {
-            document.getElementById("construction-modal").classList.add("hidden");
+        document.getElementById('nextReview').addEventListener('click', () => {
+            currentReviewIndex = (currentReviewIndex + 1) % totalReviews;
+            updateSlider();
         });
 
-        // navbar menu toggle
+        reviewDots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentReviewIndex = parseInt(dot.dataset.index);
+                updateSlider();
+            });
+        });
+
+        // Mobile menu toggle
         document.getElementById("menu-toggle").addEventListener("click", function () {
             var menu = document.getElementById("menu");
             menu.classList.toggle("hidden");
         });
-        // Close menu when a menu item is clicked (for mobile view)
+
+        // Close menu on item click
         document.querySelectorAll("#menu a").forEach(item => {
             item.addEventListener("click", function () {
                 var menu = document.getElementById("menu");
@@ -643,6 +1826,7 @@
                 }
             });
         });
+
         // Back to top button
         const backToTopBtn = document.getElementById('backToTop');
 
@@ -663,14 +1847,12 @@
             });
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
-
                 if (targetElement) {
                     window.scrollTo({
                         top: targetElement.offsetTop - 100,
@@ -680,28 +1862,58 @@
             });
         });
 
-        // Simple animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.bg-mid-purple/30, .bg-mid-purple/50');
-
-            elements.forEach(element => {
+        // Reveal animation on scroll
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
                 const windowHeight = window.innerHeight;
+                const revealPoint = 100;
 
-                if (elementTop < windowHeight - 100) {
-                    element.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
-                    element.style.transform = 'translateY(0)';
-                    element.style.opacity = '1';
-                } else {
-                    element.style.transform = 'translateY(20px)';
-                    element.style.opacity = '0';
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('active');
                 }
             });
         }
 
-        // Initialize animations
-        window.addEventListener('load', animateOnScroll);
-        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+
+        // Parallax effect for background elements
+        document.addEventListener('mousemove', (e) => {
+            const elements = document.querySelectorAll('.parallax-bg');
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            elements.forEach((el, index) => {
+                const speed = (index + 1) * 20;
+                el.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+
+        // Simple particle effect for hero section
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            if (!particlesContainer) return;
+
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.style.cssText = `
+                    position: absolute;
+                    width: 2px;
+                    height: 2px;
+                    background: rgba(138, 92, 245, 0.5);
+                    border-radius: 50%;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    animation: float ${3 + Math.random() * 4}s ease-in-out infinite;
+                    animation-delay: ${Math.random() * 2}s;
+                `;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
     </script>
 </body>
 
